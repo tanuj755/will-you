@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Will You Be My Girlfriend? 💕</title>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(135deg, #ff758c, #ff7eb3);
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        overflow: hidden;
+    }
+
+    .box {
+        background: white;
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+        animation: pop 1.5s ease;
+    }
+
+    h1 {
+        color: #ff4b7d;
+        font-size: 2.3em;
+    }
+
+    p {
+        font-size: 1.2em;
+        color: #555;
+    }
+
+    .buttons {
+        margin-top: 25px;
+    }
+
+    button {
+        padding: 12px 25px;
+        font-size: 1em;
+        margin: 10px;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    #yesBtn {
+        background-color: #ff4b7d;
+        color: white;
+    }
+
+    #yesBtn:hover {
+        background-color: #ff1e63;
+    }
+
+    #noBtn {
+        background-color: #ddd;
+    }
+
+    @keyframes pop {
+        from { transform: scale(0.5); opacity: 0; }
+        to { transform: scale(1); opacity: 1; }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="box">
+    <h1>Will You Be My Girlfriend? 💕</h1>
+    <p>You make my days brighter and my heart happier ❤️</p>
+
+    <div class="buttons">
+        <button id="yesBtn" onclick="accepted()">Yes 💖</button>
+        <button id="noBtn" onmouseover="moveNo()">No 🙈</button>
+    </div>
+</div>
+
+<script>
+function accepted() {
+    document.body.innerHTML = `
+        <div style="display:flex;justify-content:center;align-items:center;height:100vh;background:#ff4b7d;color:white;font-size:2em;text-align:center;flex-direction:column;">
+            YAYYY!!! 💕😍 <br>
+            You just made me the happiest person ever ❤️
+        </div>
+    `;
+}
+
+function moveNo() {
+    const btn = document.getElementById("noBtn");
+    btn.style.position = "absolute";
+    btn.style.left = Math.random() * 80 + "vw";
+    btn.style.top = Math.random() * 80 + "vh";
+}
+</script>
+
+</body>
+</html>
